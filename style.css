@@ -6,11 +6,13 @@ body{
     margin: 0;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(16,50px);
-    grid-template-columns: repeat(16,50px);
-    gap: 1px;
+.container{
+   display: grid;
+   grid-template-columns: repeat(16,1fr);
+   grid-template-rows: repeat(16,1fr);
+   gap: 1px;
+   width: 240px;
+   height: 240px;
 }
 
 .square{
