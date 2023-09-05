@@ -49,7 +49,17 @@ function clasColorAdd(e) {
   isRainbowMode = false;
 }
 
+function clearAllPanel(e) {
+  container.innerHTML = "";
+  isRainbowMode = false;
+  const n = parseInt(input.value) || 16;
+  createGrid(n);
+}
+
+function changeRange() {}
 rainBowBtn.addEventListener("click", toggleRainbowMode);
 colorBtn.addEventListener("click", clasColorAdd);
+clearBtn.addEventListener("click", clearAllPanel);
+input.addEventListener("input", changeRange);
 
 container.addEventListener("mouseover", colorBlack);

@@ -26,8 +26,7 @@ input {
 
 .container {
   display: grid;
-  /* grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr); */
+
   gap: 1px;
   width: 240px;
   height: 240px;
@@ -46,4 +45,10 @@ input {
 
 .black {
   background-color: black;
+}
+
+.size-value {
+  margin-left: 35px;
+  margin-bottom: 2px;
+  font-size: 10px;
 }
