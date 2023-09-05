@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="header">
-      <button class="btn" id="buton1">Click</button>
+    <div class="all">
+      <div class="header">
+        <button class="color">Color</button>
+        <button class="rainbow">Rainbow</button>
+        <button class="clear">Clear</button>
+        <input type="range" id="range" min="1" maz="100" value="16" />
+      </div>
+      <div class="container" id="append-container"></div>
     </div>
-    <div class="container" id="append-container"></div>
   </body>
 </html>

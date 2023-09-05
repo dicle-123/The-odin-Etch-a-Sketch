@@ -1,24 +1,16 @@
 const container = document.getElementById("append-container");
-const buton1 = document.querySelector("#buton1");
+const colorBtn = document.querySelector(".color");
+const rainBowBtn = document.querySelector(".rainbow");
+const clearBtn = document.querySelector(".clear");
+const input = document.querySelector("input");
+let isRainbowMode = false;
 
-const cleanGrid = () => {
-  container.innerHTML = "";
-};
-
-buton1.addEventListener("click", () => {
-  const gridSize = prompt("Please enter your value");
-  if (gridSize !== null) {
-    cleanGrid(gridSize);
-    createGrid(gridSize);
+const colorBlack = (e) => {
+  if (!isRainbowMode) {
+    e.target.classList.add("black");
+  } else if (isRainbowMode) {
+    e.target.style.backgroundColor = makeRandomColor();
   }
-});
-
-const print = (event) => {
-  event.target.style.backgroundColor = "yellow";
-};
-
-const clean = (e) => {
-  e.target.style.backgroundColor = "";
 };
 
 function createGrid(n) {
@@ -28,10 +20,36 @@ function createGrid(n) {
     const createDiv = document.createElement("div");
     createDiv.classList.add("square");
     container.appendChild(createDiv);
-
-    createDiv.addEventListener("mouseover", print);
-    createDiv.addEventListener("mouseleave", clean);
   }
 }
 
 createGrid(16);
+
+function getRundomNumber() {
+  return Math.ceil(Math.random() * 256);
+}
+
+function makeRandomColor() {
+  return `rgb(${getRundomNumber()}, ${getRundomNumber()}, ${getRundomNumber()})`;
+}
+
+function makeRainbow(e) {
+  if (isRainbowMode) {
+    e.target.style.backgroundColor = makeRandomColor();
+  } else if (!isRainbowMode) {
+    e.target.classList.add("black");
+  }
+}
+
+function toggleRainbowMode() {
+  isRainbowMode = !isRainbowMode;
+}
+
+function clasColorAdd(e) {
+  isRainbowMode = false;
+}
+
+rainBowBtn.addEventListener("click", toggleRainbowMode);
+colorBtn.addEventListener("click", clasColorAdd);
+
+container.addEventListener("mouseover", colorBlack);
