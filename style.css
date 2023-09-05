@@ -41,6 +41,7 @@ input {
 
 .all {
   display: flex;
+  flex-direction: row;
 }
 
 .black {
@@ -51,4 +52,25 @@ input {
   margin-left: 35px;
   margin-bottom: 2px;
   font-size: 10px;
+}
+
+.color:active,
+.rainbow:active,
+.clear:active {
+  cursor: pointer;
+  background-color: darkorchid;
+  color: #fff;
+
+  border-radius: 4px;
+}
+
+.color,
+.rainbow,
+.clear {
+  cursor: pointer;
+  background-color: darkorchid;
+  transform: scale(1.1);
+  border: none;
+  transition: all 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
 }

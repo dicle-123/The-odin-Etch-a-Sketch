@@ -2,7 +2,8 @@ const container = document.getElementById("append-container");
 const colorBtn = document.querySelector(".color");
 const rainBowBtn = document.querySelector(".rainbow");
 const clearBtn = document.querySelector(".clear");
-const input = document.querySelector("input");
+const rangeInput = document.getElementById("range");
+const sizeLabel = document.querySelector(".size-value");
 let isRainbowMode = false;
 
 const colorBlack = (e) => {
@@ -52,14 +53,20 @@ function clasColorAdd(e) {
 function clearAllPanel(e) {
   container.innerHTML = "";
   isRainbowMode = false;
-  const n = parseInt(input.value) || 16;
+  const n = parseInt(rangeInput.value) || 16;
   createGrid(n);
 }
 
-function changeRange() {}
+rangeInput.addEventListener("input", function () {
+  const value = rangeInput.value;
+  sizeLabel.textContent = `${value} x ${value}`;
+  container.innerHTML = "";
+
+  createGrid(value);
+});
+
 rainBowBtn.addEventListener("click", toggleRainbowMode);
 colorBtn.addEventListener("click", clasColorAdd);
 clearBtn.addEventListener("click", clearAllPanel);
-input.addEventListener("input", changeRange);
 
 container.addEventListener("mouseover", colorBlack);
