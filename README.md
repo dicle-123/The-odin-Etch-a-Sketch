@@ -21,7 +21,7 @@ This project is built using HTML, CSS, and JavaScript. You can view it directly 
    git clone https://github.com/dicle-123/The-odin-Etch-a-Sketch.git
 
 # Demo
-You can view the live demo of this project on GitHub Pages: Etch-a-Sketch Demo
+You can view the live demo of this project on GitHub Pages:[ Etch-a-Sketch Demo](https://dicle-123.github.io/The-odin-Etch-a-Sketch/)
 
 ## Usage
 Open the index.html file in your browser.
